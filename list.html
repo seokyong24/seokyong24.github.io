@@ -1,0 +1,5341 @@
+﻿
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>양구볼구양  &gt; 양구9경</title>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+	<meta name='description' content='양구볼구양!? 알면 더 잘 보이는 양구의 매력! 양구 여행의 모든 것! 양구관광문화'>
+	<meta name='keywords' content='양구문화관광, 양구, 양구올구양, 양구군청, 양구여행, 양구관광, 두타연, dmz, 양구관광문화'>
+	
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="양구볼구양  &amp;gt; 양구9경">
+	<meta property="og:description" content="양구볼구양!? 알면 더 잘 보이는 양구의 매력! 양구 여행의 모든 것! 양구관광문화">
+	
+	<meta property="og:image" content="/assets/common/img/ygtour_master_img.jpg" />
+		
+	
+	<meta name="naver-site-verification" content="1da0848cb237e5a39a90572b0092b4ee03a741e1"/>
+	
+	
+	<link rel="canonical" href="http://www.ygtour.kr">
+    
+    <link rel="shortcut icon" href="/assets/front/img/favicon.ico?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/default.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/aos-2.3.1.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/animate.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/swiper.min.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/fullpage.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/common.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/im_board.css?v=1765861879564">
+    <link rel="stylesheet" href="/assets/front/css/style.css?v=1765861879564">
+    
+	<link rel="stylesheet" href="/assets/common/css/custom.css?v=1765861879564">
+	<link rel="stylesheet" href="/assets/plugin/jquery/jquery-ui.css">
+	
+	<script src="/assets/plugin/jquery/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="/assets/plugin/jquery/jquery-ui.min.js" type="text/javascript"></script>    
+	<script src="/assets/plugin/jquery/jquery.number.js"></script>
+	<script src="/assets/plugin/comm/clipboard.min.js?v=1765861879564" type="text/javascript"></script>
+	<script src="/assets/plugin/comm/common.js?v=1765861879564" type="text/javascript"></script>
+	<script src="/assets/plugin/validate/form.validate.js" type="text/javascript"></script>
+	
+	<script src="/assets/front/js/fullpage.js"></script>
+    <script src="/assets/front/js/swiper.min.js"></script>
+    <script src="/assets/front/js/aos-2.3.1.js"></script>    
+    <script src="/assets/front/js/common.js?v=1765861879564"></script>
+    <script src="/assets/script/daum.map.js?v=1765861879564"></script>
+    <script src="/assets/script/im.fn.script.js?v=1765861879564"></script>
+	
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ecf82376a9a9c441b58ee471cb4c497&libraries=services,clusterer,drawing"></script>	
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	
+	<script type="text/javascript" src="/assets/plugin/lazy/jquery.lazy.min.js"></script>
+	<script type="text/javascript" src="/assets/plugin/lazy/jquery.lazy.plugins.min.js"></script>
+
+	<!-- Print Plugin-->
+		
+	<script src="/assets/plugin/print/printThis.js"></script>
+
+<script type="text/javascript">
+// 로그인아이디
+var GLOBAL_USER_ID = "";
+var ctx = "";
+//업로드서버경로
+var uploadDefaultUrl = "/upload"; 
+//섬네일 이미지 기본폴더명
+var uploadImgThumbDir = "thumb";
+//에디터 이미지 기본폴더명
+var uploadImgEditorDir = "cont";
+//sns 페이스북 API 키
+var snsFacebookApiKey = "1260686764310347";
+// sns 카카오톡 API 키
+var snsKakaoApiKey ="8ecf82376a9a9c441b58ee471cb4c497";
+// 모바일접근여부
+var isMobileAccess = "false";
+
+// 로그아웃
+function fnLogout(){	
+	window.location.href = ctx+"/Home/logout";
+}
+
+//ajaxRes
+var ajaxRes;
+function ajaxCall(data, url){
+	ajaxRes = $.ajax({
+		data:data,
+		url : url,
+		type:"post",
+		cache:false,
+		dataType:"json",
+		//timeout : 5000,
+		beforeSend: function(){
+			//$('.bg_loading').show();
+			$('.m-loading-full').addClass('active');
+		},
+		error: function(e) {
+			alert("로딩중입니다...");			
+			//console.log(e)
+		},		
+		complete: function(){
+			//$('.bg_loading').hide();
+			$('.m-loading-full').removeClass('active');
+		}
+	});
+}
+
+jQuery(function($){	
+	// 프린트
+	$('.btnPrint').on("click", function(e) {
+		e.preventDefault();
+		$('#contents_wrap').printThis({			   
+			importCSS: true,
+			importStyle : true,
+			header : '<h1><strong>양구볼구양  &gt; 양구9경</strong></h1>',
+		});
+    });
+});
+</script>
+</head>
+<body>	
+<div class="m-loading-full type01"></div>
+<div id="app" class="sub">
+	<div class="skip-navigation">
+		<a href="#contents_wrap">메뉴 건너뛰기</a>
+	</div>
+	
+	
+
+
+
+
+
+
+
+
+
+
+<script>
+function topSearchSubmit(){
+	if($.isStrNvl($('#all_search_keyword').val().trim())){
+		return true;
+	} else {
+		alert('검색어를 입력해 주세요.');
+		$('#all_search_keyword').focus();
+		return false;
+	}
+}
+function mTopSearchSubmit(){
+	if($.isStrNvl($('#m_all_search_keyword').val().trim())){
+		return true;
+	} else {
+		alert('검색어를 입력해 주세요.');
+		$('#m_all_search_keyword').focus();
+		return false;
+	}
+}
+</script>
+
+<div id="search">
+    <div class="fragment">
+        <div class="input input_search">
+        <form action="/Home/H90000/H90600/unifiedSearch" onsubmit="return topSearchSubmit();">
+            <input type="text" name="search_keyword" id="all_search_keyword" placeholder="검색어를 입력해 주세요.">
+            <button class="input_search_btn">
+                <img src="/assets/front/img/icon_search_gray.png" alt="검색하기">
+            </button>
+		</form>
+        </div>
+    </div>
+
+    <button type="button" class="btn_close_pop" data-target="#search">
+        <img src="/assets/front/img/icon_x_gray.png" alt="">
+    </button>
+</div>
+    
+<header class="header">
+	<a href="/Home/index" class="logo">
+		<img src="/assets/front/img/logo.png" alt="메인 페이지로 이동">
+	</a>
+
+	<div class="gnbs">
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb ">
+					<a href="/Home/H10000/H10100/placeCourseList?curationGroup=1" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">여</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">행</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">할</span>
+						
+												
+						
+						
+						
+							<span class="letter top">구</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">양</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb ">
+					<a href="/Home/H20000/H20200/placeList?curationGroup=2&place_class=P001&viewClass=tour" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">둘</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">러</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">볼</span>
+						
+												
+						
+						
+						
+							<span class="letter top">구</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">양</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb ">
+					<a href="/Home/H30000/H30100/placeList?viewClass=tour&place_class=P012" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">즐</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">길</span>
+						
+												
+						
+						
+						
+							<span class="letter top">구</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">양</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb ">
+					<a href="/Home/H40000/H40100/placeList?curationGroup=3&place_class=P007&viewClass=food" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">먹</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">고</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">잘</span>
+						
+												
+						
+						
+						
+							<span class="letter top">구</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">양</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb ">
+					<a href="/Home/H50000/H50100/H50101/boardList" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">안</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">내</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">할</span>
+						
+												
+						
+						
+						
+							<span class="letter top">구</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">양</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb ">
+					<a href="/Home/H60000/H69000/html" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">예</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">약</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">할</span>
+						
+												
+						
+						
+						
+							<span class="letter top">구</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">양</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+				<div class="gnb active">
+					<a href="/Home/H70000/placeDetail?place_no=48&viewClass=tour&place_class=P015" class="text" >
+						
+						
+						
+						
+						
+							<span class="letter">양</span>
+						
+												
+						
+						
+						
+						
+						
+							<span class="letter">구</span>
+						
+												
+						
+						
+						
+							<span class="letter top">9</span>
+						
+						
+						
+												
+						
+						
+						
+						
+							<span class="letter bottom">경</span>
+						
+						
+												
+						
+						
+					</a>
+				</div>	
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+			
+			
+			
+			
+			
+							
+			
+			
+			
+			
+			 
+			
+
+		
+	</div>
+
+	<div class="utils">
+		<div class="language">
+			<button class="language-btn m-script-pop" data-target="#language">Language <img src="/assets/front/img/icon_triangle_bottom_gray.png" alt="랭귀지 열고닫기"></button>
+
+			<div id="language">				
+				<!-- <a href="/Home/index" target="_blank">한국어</a> -->
+				<a href="/Eng/index" target="_blank">English</a>
+				<a href="/Chn/index" target="_blank">中文</a>
+				<a href="/Jpn/index" target="_blank">日本語</a>
+			</div>
+		</div>
+
+		<a href="https://www.yanggu.go.kr" class="external" title="새창열림" target="_blank">
+			<img src="/assets/front/img/logo_other01.png" alt="양구군청">
+		</a>
+		
+		<a href="/Guide/index" target="_blank" class="btn-square point2">
+			<img src="/assets/front/img/icon_vr.png" alt="양구VR 이동" class="inactive">
+			<img src="/assets/front/img/icon_vr_white.png" alt="양구VR 이동" class="active">
+		</a><!-- 2021-18-26 #수정 (양구VR추가) -->	
+
+		
+		
+		
+			<a href="/HotPlace/index" class="btn-square point" target="_blank">
+				<img src="/assets/front/img/icon_hot.png" alt="핫플레이스로 이동" class="inactive">
+				<img src="/assets/front/img/icon_hot_white.png" alt="핫플레이스로 이동" class="active">
+			</a>
+		
+				
+
+		<div class="squares">
+			<button class="btn-square m-script-pop" data-target="#search">
+				<img src="/assets/front/img/icon_search_white.png" alt="검색" class="pc">
+				<img src="/assets/front/img/icon_search_blue.png" alt="검색" class="m">
+			</button>
+			
+			<div class="btn-square btn-menu m-script-pop" data-target="#sitemap" data-animation="toggle">
+				<button class="hamburger hamburger_type01" type="button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+
+			<div class="btn-square btn-menu btn-sidebar m">
+				<button class="hamburger hamburger_type01" type="button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="subgnbs">
+	<div class="top">
+		<div class="language">
+			<button class="language-btn m-script-pop" data-target="#language-mobile">Language <img src="/assets/front/img/icon_triangle_bottom_gray.png" alt="랭귀지 열고닫기"></button>
+
+			<div id="language-mobile">
+				<!-- <a href="/Home/index" target="_blank">한국어</a> -->
+				<a href="/Eng/index" target="_blank">English</a>
+				<a href="/Chn/index" target="_blank">中文</a>
+				<a href="/Jpn/index" target="_blank">日本語</a>
+			</div>
+		</div>
+		<div id="search-mobile">
+			<div class="fragment">
+				<div class="input input_search">
+					<form action="/Home/H90000/H90600/unifiedSearch" onsubmit="return mTopSearchSubmit();">
+			            <input type="text" name="search_keyword" id="m_all_search_keyword"  placeholder="검색어를 입력해 주세요.">
+			            <button class="input_search_btn">
+			                <img src="/assets/front/img/icon_search_gray.png" alt="검색하기">
+			            </button>
+					</form>				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">여행할구양</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">여행할구양</p>
+						<p class="body">
+						
+						꼭 가봐야 하는 여행코스를 알려줄게!
+						
+						
+						
+						
+						
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H10000/H10100/placeCourseList?curationGroup=1"  title="추천코스">
+									추천코스
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H10000/H10200/placeCourseIntro"  title="나만의 코스">
+									나만의 코스
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H10000/H10400/placeAroundView"  title="내 주변">
+									내 주변
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">둘러볼구양</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">둘러볼구양</p>
+						<p class="body">
+						
+						
+						어떤 관광지가 있는지 궁금해? 궁금하면 둘러봐~
+						
+						
+						
+						
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="http://ygtour.kr/HotPlace/index" target='_blank' title="핫!플레이스">
+									핫!플레이스
+									<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="https://www.ygtour.kr/Guide/index" target='_blank' title="Smart 랜선 여행">
+									Smart 랜선 여행
+									<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H20000/H20200/placeList?curationGroup=2&place_class=P001&viewClass=tour"  title="힐링명소">
+									힐링명소
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H20000/H20300/placeList?curationGroup=2&place_class=P002&viewClass=tour"  title="문화명소">
+									문화명소
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H20000/H20400/placeList?curationGroup=2&place_class=P003&viewClass=tour"  title="DMZ평화">
+									DMZ평화
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H20000/H20500/placeList?curationGroup=2&place_class=P004&viewClass=tour"  title="기타명소">
+									기타명소
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H20000/H20700/boardList"  title="양구관광홍보영상">
+									양구관광홍보영상
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">즐길구양</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">즐길구양</p>
+						<p class="body">
+						
+						
+						
+						다양하게 즐기고 싶다면 여기 클릭!
+						
+						
+						
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="https://ygcf.or.kr/Festival/F30000/index" target='_blank' title="축제">
+									축제
+									<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H30000/H30200/placeList?&place_class=P013&viewClass=tour"  title="트레킹">
+									트레킹
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H30000/H30300/placeList?curationGroup=2&place_class=P005&viewClass=tour"  title="레포츠">
+									레포츠
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H30000/H30400/placeList?viewClass=tour&place_class=P006"  title="양구 체험관광">
+									양구 체험관광
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">먹고잘구양</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">먹고잘구양</p>
+						<p class="body">
+						
+						
+						
+						
+						맛집, 숙소, 카페, 캠핑장 정보를 한번에 찾아봐!
+						
+						
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H40000/H40100/placeList?curationGroup=3&place_class=P007&viewClass=food"  title="양구맛집">
+									양구맛집
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H40000/H40200/placeList?curationGroup=3&place_class=P008&viewClass=food"  title="음식점">
+									음식점
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H40000/H40300/placeList?curationGroup=4&place_class=P009&viewClass=food"  title="카페">
+									카페
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H40000/H40400/placeList?curationGroup=5&place_class=P010&viewClass=room"  title="숙박">
+									숙박
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H40000/H40500/placeList?curationGroup=6&place_class=P011&viewClass=tour"  title="캠핑장">
+									캠핑장
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">안내할구양</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">안내할구양</p>
+						<p class="body">
+						
+						
+						
+						
+						
+						필요한 정보만 콕콕 집어줄게~
+						
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50100/H50101/boardList"  title="공지사항">
+									공지사항
+									
+								</a>
+								<div class="box-depth03">
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="/Home/H50000/H50100/H50101/boardList" >
+												공지사항
+												
+											</a>
+										
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="/Home/H50000/H50100/H50102/boardList" >
+												이벤트
+												
+											</a>
+										
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="/Home/H50000/H50100/H50103/boardList" >
+												Q&amp;A
+												
+											</a>
+										
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50200/boardList"  title="공모 사진">
+									공모 사진
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50300/H50301/html"  title="교통정보">
+									교통정보
+									
+								</a>
+								<div class="box-depth03">
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="/Home/H50000/H50300/H50301/html" >
+												오시는길
+												
+											</a>
+										
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="/Home/H50000/H50300/H50302/html" >
+												양구 시외버스 시간표
+												
+											</a>
+										
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="https://bis.yanggubus.kr/schedule" target='_blank'>
+												양구 농어촌 버스 시간표
+												<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+											</a>
+										
+									
+										
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+											
+											<a href="/Home/H50000/H50300/H50304/html" >
+												랜터카
+												
+											</a>
+										
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50400/weather"  title="날씨정보">
+									날씨정보
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50600/applicationForm"  title="홍보물 신청">
+									홍보물 신청
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50700/html"  title="문화관광해설사 예약">
+									문화관광해설사 예약
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50800/html"  title="카페">
+									카페
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H50900/html"  title="모범음식점">
+									모범음식점
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H50000/H51000/html"  title="우수 다중이용업소">
+									우수 다중이용업소
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">예약할구양</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">예약할구양</p>
+						<p class="body">
+						
+						
+						
+						
+						
+						
+						관광지, 캠핑장, 시티투어 예약할 때 요기요~
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H60000/H69000/html"  title="통합예약">
+									통합예약
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H60000/H60100/goodsList?sys_type=citytour" target='_blank' title="양구시티투어">
+									양구시티투어
+									<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="https://stour.ticketplay.zone/" target='_blank' title="안보관광지">
+									안보관광지
+									<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="http://yanggu.ticketplay.zone/portal/index#section0" target='_blank' title="국토정중앙천문대 캠핑장">
+									국토정중앙천문대 캠핑장
+									<img src="/assets/front/img/externalLink-sky.png" alt="" class="external">
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+			<div class="subgnb">
+				<button type="button" class="depth01">양구9경</button>
+		
+				<div class="deco">
+					<div class="box-text">
+						<p class="title">양구9경</p>
+						<p class="body">
+						
+						
+						
+						
+						
+						
+						
+						
+						</p>
+					</div>
+		
+					<img src="/assets/front/img/subgnb01.png" alt="장식이미지">
+				</div>
+		
+				<div class="links">
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=48&viewClass=tour&place_class=P015"  title="양구수목원">
+									양구수목원
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=11&viewClass=tour&place_class=P015"  title="한반도섬">
+									한반도섬
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=575&viewClass=tour&place_class=P015"  title="두타연">
+									두타연
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=9&viewClass=tour&place_class=P015"  title="양구군립박수근미술관">
+									양구군립박수근미술관
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=57&viewClass=tour&place_class=P015"  title="양구백자박물관">
+									양구백자박물관
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=616&viewClass=tour&place_class=P015"  title="펀치볼">
+									펀치볼
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=614&viewClass=tour&place_class=P015"  title="봉화산">
+									봉화산
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=1090&viewClass=tour&place_class=P015"  title="상무룡 출렁다리">
+									상무룡 출렁다리
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+						
+							
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+				    		
+
+							<div class="box-depth02">
+								<a href="/Home/H70000/placeDetail?place_no=617&viewClass=tour&place_class=P015"  title="광치계곡">
+									광치계곡
+									
+								</a>
+								<div class="box-depth03">
+									
+								</div>
+							</div>
+						
+					
+				</div>
+			</div>
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+	
+		
+		
+		
+		
+		
+						
+		
+		
+		
+		
+		 
+		
+		
+
+	<div class="btn-square btn-menu btn-sidebar m">
+		<button class="hamburger hamburger_type01 active" type="button">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</div>
+</div>
+
+<div class="black"></div>
+
+
+
+	
+	
+	<div class="main">
+		<div class="visual_wrap">
+			
+
+
+
+
+
+
+
+<!-- 메뉴명 -->
+
+
+
+
+
+<div class="box_text">
+    <p class="title">양구9경</p>
+</div>
+            
+
+	
+	
+		<img src="/assets/front/img/visual01.jpg" alt="">
+	
+
+		</div>
+		
+		<div class="sub_wrap">
+			
+
+
+
+
+
+
+
+<div class="box_depth02 clearfix ">
+	<div class="wrap_1200">
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=48&viewClass=tour&place_class=P015" class="depth02 " >
+	    			양구수목원
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=11&viewClass=tour&place_class=P015" class="depth02 " >
+	    			한반도섬
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=575&viewClass=tour&place_class=P015" class="depth02 " >
+	    			두타연
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=9&viewClass=tour&place_class=P015" class="depth02 " >
+	    			양구군립박수근미술관
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=57&viewClass=tour&place_class=P015" class="depth02 " >
+	    			양구백자박물관
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=616&viewClass=tour&place_class=P015" class="depth02 " >
+	    			펀치볼
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=614&viewClass=tour&place_class=P015" class="depth02 " >
+	    			봉화산
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=1090&viewClass=tour&place_class=P015" class="depth02 " >
+	    			상무룡 출렁다리
+	    			
+	    		</a>
+	    		
+			
+			
+				
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		<a href="/Home/H70000/placeDetail?place_no=617&viewClass=tour&place_class=P015" class="depth02 " >
+	    			광치계곡
+	    			
+	    		</a>
+	    		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	</div>
+</div>
+
+<div class="locate_wrap">
+	<div class="wrap_1200">
+		<div class="locates">
+			<a href="/Home/index" class="locate">
+				<img src="/assets/front/img/icon_home_gray.png" alt=""> 
+				<span class="text">HOME</span>
+			</a>	
+			
+			
+				
+		    		
+		    		
+		    		
+		   		
+		   		
+		    		
+		    		
+		   		
+				<a href="/Home/H70000/placeDetail?place_no=48&viewClass=tour&place_class=P015"  class="locate">양구9경</a>
+			
+			
+			<!-- 1차 -->
+			
+            
+            <!-- 2차 -->
+            
+
+			<!-- 3차 -->
+						
+		</div>
+
+		<div class="utils">
+            
+
+
+
+
+
+
+
+<div class="util btnSnsShare">
+<img src="/assets/front/img/icon_share.png" alt="공유">			
+	<div class="m-box-social type01">	
+		<button class="btn-close">
+            <img src="/assets/front/img/icon_x_black.png" alt="">
+        </button>
+        
+		<div class="socials">
+			<div class="social-wrap">
+				<button type="button" class="social btnSocial" data-type="facebook">
+					<img src="/assets/front/img/circleFacebook.png" alt="페이스북">
+				</button>
+			</div>
+			<div class="social-wrap">
+				<button type="button" class="social btnSocial" data-type="twitter">
+						<img src="/assets/front/img/circleTwitter.png" alt="트위터">
+				</button>
+			</div>               
+			<div class="social-wrap">
+				<button type="button" class="social btnSocial" data-type="naverblog">
+					<img src="/assets/front/img/circleBlog.png" alt="네이버 블로그">
+				</button>
+			</div>
+			<div class="social-wrap">
+				<button type="button" class="social btnSocial" data-type="naverband">
+					<img src="/assets/front/img/circleBand.png" alt="네이버 밴드">
+				</button>
+			</div>
+			<div class="social-wrap">
+				<button type="button" class="social btnSocial" data-type="kakaotalk">
+					<img src="/assets/front/img/circleKakao.png" alt="카카오톡">
+				</button>
+			</div>
+			<div class="social-wrap">
+				<button type="button" class="social btnSocial" data-type="kakaostory">
+					<img src="/assets/front/img/circleStory.png" alt="카카오스토리">
+				</button>
+			</div>	                    
+		</div>		
+		<div class="box-copy">
+			<input type="text" id="currentPageUrl" class="copyShareShortLinkUrl" readonly="readonly">
+			<button type="button" class="btn-copy copyShareShortLinkUrl">복사</button>		                    
+		</div>
+	</div>
+</div>
+
+	<button class="util btnPrint">
+		<img src="/assets/front/img/icon_print.png" alt="인쇄">
+	</button>
+
+
+<script>
+im.share.init();
+</script>
+        </div>
+	</div>
+</div>
+		</div>
+		
+		<div id="contents_wrap" class="contents_wrap">
+			
+
+
+
+
+
+
+
+
+
+
+			
+			<button class="btn_top m">
+			    <img src="/assets/front/img/icon_forked_top_white.png" alt="최상단으로 이동">
+			</button>
+			<button class="btn_down m">
+                <img src="/assets/front/img/icon_forked_top_white.png" alt="최하단으로 이동">
+            </button>
+			
+			
+
+
+
+
+
+
+
+<!-- 2023-10-12 추가 랜덤 -->
+
+<div class="rendom-place">
+	<div class="wrap_1200">
+		<img class="rendom-title" src="/assets/front/img/remdom-title.png">
+		<div id="randomListArea" class="cards type05">
+			<!-- 10개만 노출  -->
+		</div>
+	</div>
+</div>
+<!-- 랜덤//  -->
+
+
+<section class="section-cards section-foods">
+
+	<!-- 축제 -->
+	
+	<!-- 트레킹 -->
+	
+	<!-- 양구 체험관광 -->
+	
+	<!-- 양구 9구경 -->
+	
+
+	
+    
+	<div class="wrap_1200">
+		
+		
+
+		<!-- 정렬버튼 & 검색창 -->
+		<div class="box-search type01">
+			<div class="orders type01">
+				<div class="order cards-count">총 <span class="point" id="placeTotalCount">-</span>건</div>				
+				<button class="order btnOrderType active" data-type="1">좋아요</button>
+				<button class="order btnOrderType" data-type="2">즐겨찾기순</button>
+				<button class="order btnOrderType" data-type="3">최신순</button>
+				<button class="order btnOrderType" data-type="4">이름순</button>
+				
+						
+			</div>
+
+			<div class="fragment">
+				
+				<div class="types type01">
+					<button class="btn-type m-script-pop btnViewType active" data-type="gallery">
+						<img src="/assets/front/img/squares.png" alt="">
+					</button>
+
+					<button class="btn-type m-script-pop btnViewType" data-type="thumb">
+						<img src="/assets/front/img/lines.png" alt="">
+					</button>
+				</div>
+								
+
+				<fieldset>
+					<legend>게시물 검색</legend>
+					<div class="m-search type02">
+						<div class="m-search-select-wrap">
+							<select class="m-search-select" id="search_column" name="search_type" title="검색구분 선택">
+								
+								<option value="1" >플레이스명</option>
+								<option value="2" >해시태그</option>
+								<option value="3" >지역</option>
+							</select>
+						</div>
+						<input class="m-search-input" id="search_keyword" name="search_keyword" value="" title="검색어 입력" type="text" value="" placeholder="검색어를 입력하세요.">
+						<button class="m-search-btn btnSearch" type="button">
+							<span class="m-search-btn-text">검색</span>
+						</button>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		
+		
+		
+		<div class="m-empty-box type01" id="noDataArea" style="display:none;">
+			<img src="/assets/front/img/logo_gray.png" alt="" class="deco">
+			<h3 class="m-empty-text">검색 결과가 없습니다.</h3>
+		</div>
+				
+		<div class="cards type02" id="placeDataList">
+		<!-- 리스트 영역 -->
+		</div>
+
+		<!-- 더보기 -->
+		<div class="m-pagination btns align-center" id="moreButtonArea">
+			<a href="#" class="btn type02 type-blue btnMore">
+				더보기
+				<img src="/assets/front/img/icon_plus_white.png" alt="" class="plus">
+			</a>
+		</div>		
+	</div>
+</section>
+
+<script src="/assets/script/front.place.list.js?v=1765861879564"></script>
+<script>
+place.params.curationGroup = '';
+place.params.place_class = '';
+place.params.viewClass = 'tour';
+place.params.search_column = '';
+place.params.search_keyword = '';
+place.params.defaultParameter = '';
+place.init();
+</script>
+			
+
+
+
+
+
+
+
+
+	<!-- 국문전용 -->
+	
+	<div class="wrap_1200">
+		<div class="pageInfo type01">
+			<div class="pageInfo-top">
+				<div class="charger">
+					<img src="/assets/front/img/circleBook.png" alt="" class="icon">
+		
+					<h3 class="title">담당부서</h3>
+		
+					<p class="body">관광문화과</p>
+				</div>
+				<div class="charger">
+					<img src="/assets/front/img/circlePerson.png" alt="" class="icon">
+		
+					<h3 class="title">연락처</h3>
+		
+					<p class="body">033-480-7204</p>
+				</div>
+				<div class="charger">
+					<img src="/assets/front/img/circlePen.png" alt="" class="icon">
+		
+					<h3 class="title">최종수정일</h3>
+		
+					<p class="body">2024-07-02</p>
+				</div>
+			</div>
+			<div class="pageInfo-body">
+				<h3 class="comment">이 페이지에서 제공하는 정보에 대하여 만족하시나요?</h3>
+		
+				<div class="stars btnContsEvltn">
+					<button class="star active" data-val="2"></button>
+					<button class="star active" data-val="2"></button>
+					<button class="star active" data-val="2"></button>
+					<button class="star active" data-val="2"></button>
+					<button class="star" data-val="2"></button>
+				</div>
+		
+				<button class="btn type03 type-gray btnContsEvltnSave">등록하기</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		im.contsEvltn.init()
+	</script>
+	
+
+
+		</div>
+	</div>
+
+	
+
+
+
+
+
+
+
+
+	
+	<footer class="footer clearfix">
+		<div class="box_middle">
+			<div class="box_top">
+				<div class="wrap">
+					<div class="links">
+						<a href="https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=374" target="_blank" class="link point">개인정보처리방침</a>
+						<a href="/Home/H90000/H90200/html" class="link">저작권보호정책</a>
+						<a href="/Home/H90000/H90300/html" class="link">이메일무단수집거부</a>						
+					</div>	
+					<div class="box_right float right">
+						<div class="box_family float">
+							<button class="text  btn_pop">관련사이트</button>	
+							<div class="contents_pop_wrap">
+								<div class="contents_pop">
+									<a href="https://www.yanggu.go.kr" class="text" target="_blank" title="새창열림">양구군</a>
+									<!-- <a href="/Guide/index" class="text" target="_blank" title="새창열림">양구스마트VR</a> -->
+									<a href="http://www.yanggugun.co.kr/" class="text" target="_blank" title="새창열림">양구명품관</a>
+									<a href="https://www.yanggu-mall.com/main/index" class="text" target="_blank" title="새창열림">양구몰</a>
+									<a href="http://ygpm.or.kr/" class="text" target="_blank" title="새창열림">양구선사박물관</a>
+									<a href="http://www.yanggum.or.kr/" class="text" target="_blank" title="새창열림">양구백자박물관</a>
+									<a href="https://yg-eco.kr/" class="text" target="_blank" title="새창열림">양구수목원</a>
+									<a href="http://www.parksookeun.or.kr/" class="text" target="_blank" title="새창열림">박수근 미술관</a>
+									<a href="https://www.ymunhak.or.kr:51472/" class="text" target="_blank" title="새창열림">양구인문학박물관</a>
+									<a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030095" class="text" target="_blank" title="새창열림">광치자연휴양림</a>
+									<a href="http://www.goralkorea.or.kr/" class="text" target="_blank" title="새창열림">한국산양보호협회</a>
+									
+									<a href="http://www.ygfarmtour.com/" class="text" target="_blank" title="새창열림">양구농촌체험마을</a>
+									<a href="http://www.약수골캠프촌.com/index.php" class="text" target="_blank" title="새창열림">약수골캠프촌</a>
+									
+									<a href="https://korean.visitkorea.or.kr/" class="text" target="_blank" title="새창열림">대한민국 구석구석</a>
+									<a href="http://www.dmztrail.or.kr/" class="text" target="_blank" title="새창열림">DMZ펀치볼 둘레길</a>
+									<a href="https://www.forest.go.kr/kfsweb/kfi/kfs/cms/cmsView.do?mn=NKFS_02_08_02_01_07&cmsId=FC_001520" class="text" target="_blank" title="새창열림">국립DMZ자생식물원</a>
+									<a href="https://haean.kr/user/index.php" class="text" target="_blank" title="새창열림">해안야생화공원</a>
+									
+									<a href="http://tour.chuncheon.go.kr" class="text" target="_blank" title="새창열림">춘천 관광 포털</a>
+									<a href="http://tour.ihc.go.kr/hb/portal" class="text" target="_blank" title="새창열림">화천감성여행</a>
+									<a href="http://tour.inje.go.kr/tour" class="text" target="_blank" title="새창열림">인제문화관광</a>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+	
+			<div class="wrap">
+				<div class="box_bottom">
+					<img src="/assets/front/img/logo_footer_2.png" alt="청춘양구" class="logo">
+					<div>
+						<p class="info">강원특별자치도 양구군 양구읍 관공서로 38 (하리34-5) / <a href="tel:(관광관련안내: 033-480-7204) (홈페이지 관리:033-480-7182)" class="info">대표전화번호 : (관광관련안내: 033-480-7204) (홈페이지 관리:033-480-7182)</a></p>
+						<p class="copyright">
+							Copyright ⓒ Yanggu-gun. All rights reserved.
+						</p>
+					</div>		
+					
+				</div>
+			</div>
+	
+		</div>
+	</footer>
+
+
+
+
+<!-- 운영계 구글 애널리틱스 스크립트 적용 -->
+
+
+
+
+
+
+
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8PT2M0NSG"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-J8PT2M0NSG');
+	</script>
+
+
+
+	
+
+
+
+
+
+
+
+<div id="sitemap">
+	<div class="top">
+		<a href="/Home/index" class="logo">
+			<img src="/assets/front/img/logo.png" alt="홈">
+		</a>		
+		<button type="button" class="btn-close m-script-pop" data-target="#sitemap" data-animation="toggle"><img src="/assets/front/img/x-black.png" alt=""></button>
+	</div>
+
+	<div class="wrap_1200">
+		<div class="firsts">
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H10000/H10100/placeCourseList?curationGroup=1" class="first-link" >
+								여행할구양
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H10000/H10100/placeCourseList?curationGroup=1" class="second-link" >
+							    			추천코스
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H10000/H10200/placeCourseIntro" class="second-link" >
+							    			나만의 코스
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H10000/H10400/placeAroundView" class="second-link" >
+							    			내 주변
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H20000/H20200/placeList?curationGroup=2&place_class=P001&viewClass=tour" class="first-link" >
+								둘러볼구양
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="http://ygtour.kr/HotPlace/index" class="second-link" target='_blank'>
+							    			핫!플레이스
+							    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="https://www.ygtour.kr/Guide/index" class="second-link" target='_blank'>
+							    			Smart 랜선 여행
+							    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H20000/H20200/placeList?curationGroup=2&place_class=P001&viewClass=tour" class="second-link" >
+							    			힐링명소
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H20000/H20300/placeList?curationGroup=2&place_class=P002&viewClass=tour" class="second-link" >
+							    			문화명소
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H20000/H20400/placeList?curationGroup=2&place_class=P003&viewClass=tour" class="second-link" >
+							    			DMZ평화
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H20000/H20500/placeList?curationGroup=2&place_class=P004&viewClass=tour" class="second-link" >
+							    			기타명소
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H20000/H20700/boardList" class="second-link" >
+							    			양구관광홍보영상
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H30000/H30100/placeList?viewClass=tour&place_class=P012" class="first-link" >
+								즐길구양
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="https://ygcf.or.kr/Festival/F30000/index" class="second-link" target='_blank'>
+							    			축제
+							    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H30000/H30200/placeList?&place_class=P013&viewClass=tour" class="second-link" >
+							    			트레킹
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H30000/H30300/placeList?curationGroup=2&place_class=P005&viewClass=tour" class="second-link" >
+							    			레포츠
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H30000/H30400/placeList?viewClass=tour&place_class=P006" class="second-link" >
+							    			양구 체험관광
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H40000/H40100/placeList?curationGroup=3&place_class=P007&viewClass=food" class="first-link" >
+								먹고잘구양
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H40000/H40100/placeList?curationGroup=3&place_class=P007&viewClass=food" class="second-link" >
+							    			양구맛집
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H40000/H40200/placeList?curationGroup=3&place_class=P008&viewClass=food" class="second-link" >
+							    			음식점
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H40000/H40300/placeList?curationGroup=4&place_class=P009&viewClass=food" class="second-link" >
+							    			카페
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H40000/H40400/placeList?curationGroup=5&place_class=P010&viewClass=room" class="second-link" >
+							    			숙박
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H40000/H40500/placeList?curationGroup=6&place_class=P011&viewClass=tour" class="second-link" >
+							    			캠핑장
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H50000/H50100/H50101/boardList" class="first-link" >
+								안내할구양
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50100/H50101/boardList" class="second-link" >
+							    			공지사항
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    					
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="/Home/H50000/H50100/H50101/boardList" class="third-link" >
+								    			- 공지사항
+								    											    			
+								    		</a>
+								    		
+													
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="/Home/H50000/H50100/H50102/boardList" class="third-link" >
+								    			- 이벤트
+								    											    			
+								    		</a>
+								    		
+													
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="/Home/H50000/H50100/H50103/boardList" class="third-link" >
+								    			- Q&amp;A
+								    											    			
+								    		</a>
+								    		
+										
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50200/boardList" class="second-link" >
+							    			공모 사진
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50300/H50301/html" class="second-link" >
+							    			교통정보
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    					
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="/Home/H50000/H50300/H50301/html" class="third-link" >
+								    			- 오시는길
+								    											    			
+								    		</a>
+								    		
+													
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="/Home/H50000/H50300/H50302/html" class="third-link" >
+								    			- 양구 시외버스 시간표
+								    											    			
+								    		</a>
+								    		
+													
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="https://bis.yanggubus.kr/schedule" class="third-link" target='_blank'>
+								    			- 양구 농어촌 버스 시간표
+								    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">								    			
+								    		</a>
+								    		
+													
+											
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		
+								    		<a href="/Home/H50000/H50300/H50304/html" class="third-link" >
+								    			- 랜터카
+								    											    			
+								    		</a>
+								    		
+										
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50400/weather" class="second-link" >
+							    			날씨정보
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50600/applicationForm" class="second-link" >
+							    			홍보물 신청
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50700/html" class="second-link" >
+							    			문화관광해설사 예약
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50800/html" class="second-link" >
+							    			카페
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H50900/html" class="second-link" >
+							    			모범음식점
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H50000/H51000/html" class="second-link" >
+							    			우수 다중이용업소
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H60000/H69000/html" class="first-link" >
+								예약할구양
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H60000/H69000/html" class="second-link" >
+							    			통합예약
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H60000/H60100/goodsList?sys_type=citytour" class="second-link" target='_blank'>
+							    			양구시티투어
+							    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="https://stour.ticketplay.zone/" class="second-link" target='_blank'>
+							    			안보관광지
+							    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="http://yanggu.ticketplay.zone/portal/index#section0" class="second-link" target='_blank'>
+							    			국토정중앙천문대 캠핑장
+							    			<img src="/assets/front/img/externalLink-blue.png" alt="" class="external">
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+				
+				
+					<div class="first-wrap">
+						<div class="first">
+							<a href="/Home/H70000/placeDetail?place_no=48&viewClass=tour&place_class=P015" class="first-link" >
+								양구9경
+								
+							</a>
+							<div class="seconds">
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=48&viewClass=tour&place_class=P015" class="second-link" >
+							    			양구수목원
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=11&viewClass=tour&place_class=P015" class="second-link" >
+							    			한반도섬
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=575&viewClass=tour&place_class=P015" class="second-link" >
+							    			두타연
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=9&viewClass=tour&place_class=P015" class="second-link" >
+							    			양구군립박수근미술관
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=57&viewClass=tour&place_class=P015" class="second-link" >
+							    			양구백자박물관
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=616&viewClass=tour&place_class=P015" class="second-link" >
+							    			펀치볼
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=614&viewClass=tour&place_class=P015" class="second-link" >
+							    			봉화산
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=1090&viewClass=tour&place_class=P015" class="second-link" >
+							    			상무룡 출렁다리
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+			
+									
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+						    		
+							    		<a href="/Home/H70000/placeDetail?place_no=617&viewClass=tour&place_class=P015" class="second-link" >
+							    			광치계곡
+							    			
+							    		</a>
+							    		<div class="thirds">
+							    		
+							
+							    		</div>
+						    		
+								
+								
+							</div>
+						</div>
+					</div>		
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				 
+					
+			
+		</div>
+
+		<div class="links">
+			<div class="link-wrap">
+				<a href="/HotPlace/index" class="link" target="_blank">
+					<span class="text">핫!플레이스</span>
+					<img src="/assets/front/img/externalLink-white.png" alt="">
+				</a>
+			</div>
+			<div class="link-wrap">
+				<a href="/Eng/index" class="link" target="_blank">
+					<span class="text">English</span>
+
+					<img src="/assets/front/img/externalLink-white.png" alt="">
+				</a>
+			</div>
+			<div class="link-wrap">
+				<a href="/Chn/index" class="link" target="_blank">
+					<span class="text">中文</span>
+
+					<img src="/assets/front/img/externalLink-white.png" alt="">
+				</a>
+			</div>
+			<div class="link-wrap">
+				<a href="/Jpn/index" class="link" target="_blank">
+					<span class="text">日本語</span>
+
+					<img src="/assets/front/img/externalLink-white.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+	
+	<div class="bg_black"></div>
+	<div class="bg_loading">
+		<img src="/assets/plugin/fileupload/img/ajax-loader.gif" width="32" height="32"/>
+	</div>
+</div>
+</body>
+</html>
