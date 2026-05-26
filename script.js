@@ -333,4 +333,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     }
+
+    // 9. 교육용 사이트 안내 모달 로직
+    const noticeModal = document.getElementById('notice-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    if (noticeModal && closeModalBtn) {
+        // 사이트 로드 후 모달 노출 (약간의 지연시간을 줘서 부드럽게 등장)
+        setTimeout(() => {
+            noticeModal.classList.add('show');
+            // 모달 노출 시 바디 스크롤 금지
+            document.body.style.overflow = 'hidden';
+        }, 500);
+
+        // 닫기 버튼 클릭 시 모달 제거 및 바디 스크롤 복구
+        closeModalBtn.addEventListener('click', () => {
+            noticeModal.classList.remove('show');
+            setTimeout(() => {
+                document.body.style.overflow = '';
+            }, 500); // Transition 시간 대기
+        });
+    }
 });
