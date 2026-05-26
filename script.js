@@ -202,6 +202,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 6-2. 양구 곰취 소개 코너 탭 연동
+    const gomchwiTabs = document.querySelectorAll('.gomchwi-tab');
+    const gomchwiContents = document.querySelectorAll('.gomchwi-content');
+
+    if (gomchwiTabs.length > 0) {
+        gomchwiTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 활성화 상태 초기화
+                gomchwiTabs.forEach(t => t.classList.remove('active'));
+                gomchwiContents.forEach(c => c.classList.remove('active'));
+
+                // 현재 클릭한 탭 활성화
+                tab.classList.add('active');
+                const targetGomchwi = tab.getAttribute('data-gomchwi');
+
+                // 해당 내용 표시
+                const targetContent = document.getElementById(`gomchwi-${targetGomchwi}`);
+                if (targetContent) targetContent.classList.add('active');
+            });
+        });
+    }
+
     // 7. Floating Action Button (FAB) Menu Toggle
     const fabContainer = document.querySelector('.fab-container');
     const fabToggle = document.getElementById('fab-toggle');

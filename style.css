@@ -628,9 +628,8 @@ img {
     offset-rotate: 0deg; /* Keep car upright */
 }
 
-/* Baekkobi specific styling */
-.baekkobi-icon {
-    mix-blend-mode: multiply; /* Removes white background */
+/* Inline SVG Car specific styling */
+.svg-car {
     transform-origin: center bottom;
 }
 
@@ -638,9 +637,9 @@ img {
     animation: driveCar 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.course-svg.active .baekkobi-icon {
-    /* waddle for walking motion */
-    animation: waddle 0.4s infinite alternate ease-in-out;
+.course-svg.active .svg-car {
+    /* Subtle driving vibration animation */
+    animation: driveVibrate 0.15s infinite alternate ease-in-out;
 }
 
 @keyframes marchRoute {
@@ -655,9 +654,9 @@ img {
     100% { offset-distance: 100%; opacity: 1; }
 }
 
-@keyframes waddle {
-    from { transform: rotate(-12deg) translateY(0); }
-    to { transform: rotate(12deg) translateY(-8px); }
+@keyframes driveVibrate {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1.5px); }
 }
 
 @keyframes popPoint {
@@ -1291,6 +1290,221 @@ img {
     transform: translateY(0);
 }
 
+/* Gomchwi Section Styles */
+.bg-cream {
+    background-color: #faf8f5;
+}
+
+.gomchwi-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.gomchwi-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.gomchwi-image-frame {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(43, 92, 70, 0.12);
+    border: 6px solid white;
+    background: white;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gomchwi-image-frame:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 50px rgba(43, 92, 70, 0.2);
+}
+
+.gomchwi-main-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gomchwi-image-frame:hover .gomchwi-main-img {
+    transform: scale(1.05);
+}
+
+.gomchwi-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 5;
+}
+
+.gomchwi-info-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.gomchwi-tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(43, 92, 70, 0.1);
+    padding-bottom: 1rem;
+}
+
+.gomchwi-tab {
+    padding: 0.7rem 1.4rem;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.gomchwi-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -18px; /* Perfectly aligns with border-bottom */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.gomchwi-tab:hover {
+    color: var(--primary-color);
+}
+
+.gomchwi-tab.active {
+    color: var(--primary-color);
+}
+
+.gomchwi-tab.active::after {
+    width: 100%;
+}
+
+.gomchwi-content-wrapper {
+    position: relative;
+    min-height: 280px;
+}
+
+.gomchwi-content {
+    display: none;
+    animation: fadeUpContent 0.5s ease forwards;
+}
+
+.gomchwi-content.active {
+    display: block;
+}
+
+@keyframes fadeUpContent {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gomchwi-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.gomchwi-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.gomchwi-feature-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.gomchwi-feature-bullets li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.bullet-icon {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(43, 92, 70, 0.1);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.bullet-text strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.bullet-text span {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.gomchwi-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(43, 92, 70, 0.15);
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .section-padding, .video-section {
@@ -1316,6 +1530,13 @@ img {
     }
     .external-cards-grid, .restaurant-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .gomchwi-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .gomchwi-main-img {
+        height: 380px;
     }
 }
 
@@ -1405,5 +1626,26 @@ img {
     .fab-toggle {
         width: 55px;
         height: 55px;
+    }
+    .gomchwi-layout {
+        grid-template-columns: 1fr;
+    }
+    .gomchwi-tabs {
+        justify-content: center;
+    }
+    .gomchwi-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .gomchwi-actions .btn-primary,
+    .gomchwi-actions .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    .gomchwi-main-img {
+        height: 280px;
+    }
+    .gomchwi-content-wrapper {
+        min-height: auto;
     }
 }
