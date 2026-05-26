@@ -249,4 +249,88 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 8. EmailJS SDK 초기화 및 문의하기 전송 로직
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init({
+            publicKey: "j4MgyPXnDpKkVgZtE"
+        });
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const toastContainer = document.getElementById('toast-container');
+    const toastText = document.getElementById('toast-text');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastMessage = document.getElementById('toast-message');
+
+    function showToast(message, isError = false) {
+        if (!toastContainer) return;
+        
+        toastText.innerText = message;
+        if (isError) {
+            toastMessage.classList.add('error');
+            toastIcon.innerText = '✕';
+        } else {
+            toastMessage.classList.remove('error');
+            toastIcon.innerText = '✓';
+        }
+        
+        toastContainer.classList.add('show');
+        
+        setTimeout(() => {
+            toastContainer.classList.remove('show');
+        }, 4000);
+    }
+
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // 폼 필드 비활성화 및 전송 상태 전환
+            submitBtn.disabled = true;
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnSpinner = submitBtn.querySelector('.btn-spinner');
+            
+            if (btnText) btnText.innerText = '전송 중...';
+            if (btnSpinner) btnSpinner.classList.remove('hidden');
+            
+            // 현재 일시 포맷 계산 (YYYY-MM-DD HH:mm:ss)
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const date = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const formattedTime = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
+            
+            // 전송 파라미터 구성
+            const templateParams = {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                title: document.getElementById('contact-title').value,
+                message: document.getElementById('contact-message').value,
+                time: formattedTime
+            };
+            
+            // EmailJS 메일 전송 API 호출
+            emailjs.send('service_v1ry60c', 'template_oi06fse', templateParams)
+                .then((response) => {
+                    console.log('이메일 발송 성공!', response.status, response.text);
+                    showToast('문의 메일이 성공적으로 전송되었습니다!');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('이메일 발송 실패...', error);
+                    showToast('오류가 발생했습니다. 다시 시도해 주세요.', true);
+                })
+                .finally(() => {
+                    // 전송 완료 후 버튼 복구
+                    submitBtn.disabled = false;
+                    if (btnText) btnText.innerText = '문의 메일 발송하기';
+                    if (btnSpinner) btnSpinner.classList.add('hidden');
+                });
+        });
+    }
 });

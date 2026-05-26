@@ -23,6 +23,7 @@
                     <li><a href="#destinations">자연/생태</a></li>
                     <li><a href="#gomchwi">양구 곰취</a></li>
                     <li><a href="#culture">문화/예술</a></li>
+                    <li><a href="#contact">문의하기</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-btn" aria-label="메뉴 열기">
@@ -724,6 +725,86 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="accent-text">Contact Us</span>
+                    <h2>마음과 마음을 잇는, 양구 문의처</h2>
+                    <p>청정 양구 관광에 대해 궁금하신 점이 있으시다면 언제든 편하게 남겨주세요.</p>
+                </div>
+                
+                <div class="contact-layout fade-up" style="transition-delay: 0.2s;">
+                    <!-- Left Contact Info Details -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-header">
+                            <h3>YANGGU TOUR</h3>
+                            <p>한반도의 정중앙, 자연과 평화의 도시 양구</p>
+                        </div>
+                        
+                        <div class="contact-info-list">
+                            <div class="info-item">
+                                <div class="info-icon">📞</div>
+                                <div class="info-content">
+                                    <strong>대표 전화</strong>
+                                    <span>033-480-2114</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">✉️</div>
+                                <div class="info-content">
+                                    <strong>수신 이메일</strong>
+                                    <span>seokyong24@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">📍</div>
+                                <div class="info-content">
+                                    <strong>주소</strong>
+                                    <span>강원특별자치도 양구군 양구읍 관공서로 38</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-footer">
+                            <p>본 문의 양식은 EmailJS SDK를 연동하여 실시간으로 이메일이 즉시 수신되는 공인 시스템입니다.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Glassmorphism Form -->
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="contact-name">성함 <span class="required">*</span></label>
+                                    <input type="text" id="contact-name" name="name" required placeholder="홍길동">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">답변받을 이메일 주소 <span class="required">*</span></label>
+                                    <input type="email" id="contact-email" name="email" required placeholder="example@email.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-title">문의 제목 <span class="required">*</span></label>
+                                <input type="text" id="contact-title" name="title" required placeholder="양구 관광에 대한 문의입니다.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">상세 문의 내용 <span class="required">*</span></label>
+                                <textarea id="contact-message" name="message" required placeholder="문의하실 구체적인 상세 내용을 입력해 주세요." rows="5"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary btn-submit" id="submit-btn">
+                                <span class="btn-text">문의 메일 발송하기</span>
+                                <span class="btn-spinner hidden"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -743,6 +824,7 @@
                         <li><a href="#tour-map">관광지도</a></li>
                         <li><a href="#restaurants">모범음식점</a></li>
                         <li><a href="#location">오시는 길</a></li>
+                        <li><a href="#contact">문의하기</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -770,12 +852,23 @@
             <a href="#tour-map" class="fab-item">관광지도</a>
             <a href="#restaurants" class="fab-item">모범음식점</a>
             <a href="#location" class="fab-item">오시는 길</a>
+            <a href="#contact" class="fab-item">문의하기</a>
         </div>
         <button class="fab-toggle" id="fab-toggle" aria-label="빠른 메뉴 열기">
             <span class="fab-icon" style="font-size: 2rem; line-height: 1;">+</span>
         </button>
     </div>
 
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container">
+        <div id="toast-message" class="toast-message">
+            <span class="toast-icon" id="toast-icon">✓</span>
+            <span class="toast-text" id="toast-text">메시지가 성공적으로 전송되었습니다!</span>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
